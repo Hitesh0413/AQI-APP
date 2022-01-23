@@ -36,16 +36,16 @@ function AqiList ({
   else if (quality > 50 && quality <= 100) aqiAttr = 2;
   else if (quality > 100 && quality <= 200) aqiAttr = 3;
   else if (quality > 200 && quality <= 300) aqiAttr = 4;
-  else if (quality > 3000 && quality <= 400) aqiAttr = 5;
+  else if (quality > 300 && quality <= 400) aqiAttr = 5;
   else aqiAttr = 6;
 
-  const changedSec = (new Date().getTime() - time.getTime()) / 60;
-
+  let changedSec = new Date().getTime() - time.getTime();
+  changedSec = ((changedSec % 60000)/1000).toFixed(0)
   let timeText = '';
 
-  if (changedSec >= 60 && changedSec < 120) {
+  if (changedSec >= 6 && changedSec < 120) {
     timeText = 'A minute ago';
-  } else if (changedSec < 59) {
+  } else if (changedSec < 5) {
     timeText = 'A few seconds ago';
   } else {
     timeText = time.toLocaleString('en-US', {
@@ -56,7 +56,7 @@ function AqiList ({
   }
 
   return (
-    <tr>
+    <tr key={category[aqiAttr].label}>
       <td>{location}</td>
       <td>{Number(quality).toFixed(2)}</td>
       <td
@@ -71,9 +71,13 @@ function AqiList ({
   );
 }
 
-AqiList.protoTypes= {
+AqiList.defaultProp = {
+  time : new Date()
+}
+
+AqiList.propTypes= {
   location: PropTypes.string.isRequired,
-  time:PropTypes.Date.isRequired,
+  time:PropTypes.instanceOf(Date).isRequired,
   quality:PropTypes.number.isRequired
 }
 export default AqiList;

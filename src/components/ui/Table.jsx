@@ -1,6 +1,7 @@
 import { useState, React } from "react";
 import webSocket from "../../utils/index";
 import AqiList from "./AqiList";
+// import Chart  from "./Chart";
 
 function Table() {
   const [aqiList, setAqiList] = useState([]);
@@ -18,9 +19,9 @@ function Table() {
 
   webSocket.onmessage = ({ data }) => {
     updatedList = JSON.parse(data);
-    updatedList.map((item) => {
+    updatedList = updatedList.map((item) => {
       const list = {...item};
-      list.updated_time = new Date()
+      list.updatedTime = new Date()
       return list;
     });
 
@@ -29,6 +30,7 @@ function Table() {
   };
 
   return (
+    <div>
     <table className="styled-table">
       <thead>
         <tr>
@@ -47,6 +49,7 @@ function Table() {
         ))}
       </tbody>
     </table>
+    </div>
   );
 }
 
