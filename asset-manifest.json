@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/AQI-APP/static/css/main.0d6f7d4e.css",
+    "main.js": "/AQI-APP/static/js/main.54267f26.js",
+    "static/media/bg.jpg": "/AQI-APP/static/media/bg.40758fb542d171eeed69.jpg",
+    "index.html": "/AQI-APP/index.html",
+    "main.0d6f7d4e.css.map": "/AQI-APP/static/css/main.0d6f7d4e.css.map",
+    "main.54267f26.js.map": "/AQI-APP/static/js/main.54267f26.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0d6f7d4e.css",
+    "static/js/main.54267f26.js"
+  ]
+}
