@@ -35,3 +35,8 @@ body{
 .styled-table  td{
   background-color: #ffffff;
 }
+
+#table-graph{
+  display: flex;
+  justify-content: space-evenly;
+}

@@ -1,12 +1,16 @@
 import { useState, React } from "react";
 import webSocket from "../../utils/index";
+import labelColor from "../../utils/lable-color";
 import AqiList from "./AqiList";
-// import Chart  from "./Chart";
+import BarChart  from "./BarChart";
+import LineChart from "./Line";
 
 function Table() {
   const [aqiList, setAqiList] = useState([]);
+  const [dataList, setDataList] = useState({city:['delhi'],aqi:[0]});
 
   let updatedList = [];
+
 
   const uniqueArrayOfObjs = (givenArray, key) => {
     const newArray = {};
@@ -25,12 +29,26 @@ function Table() {
       return list;
     });
 
+    
     updatedList = uniqueArrayOfObjs([...aqiList, ...updatedList], "city");
+    const dataSet  = {
+      city : [],
+      aqi : [],
+      color : []
+    };
+
+    updatedList.forEach((item)=>{
+      dataSet.city.push(item.city);
+      dataSet.aqi.push(Number(item.aqi.toFixed(2)));
+      dataSet.color.push(labelColor(Number(item.aqi.toFixed(2))).color)
+    })
+
+    setDataList(dataSet);
     setAqiList(updatedList);
   };
 
   return (
-    <div>
+    <div id="table-graph">
     <table className="styled-table">
       <thead>
         <tr>
@@ -49,6 +67,8 @@ function Table() {
         ))}
       </tbody>
     </table>
+    <BarChart dataList={dataList}/>
+    <LineChart/>      
     </div>
   );
 }
