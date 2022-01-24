@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/AQI-APP/static/css/main.0d6f7d4e.css",
-    "main.js": "/AQI-APP/static/js/main.bac69cce.js",
+    "main.css": "/AQI-APP/static/css/main.58e30a46.css",
+    "main.js": "/AQI-APP/static/js/main.0bd1d0b1.js",
     "static/media/bg.jpg": "/AQI-APP/static/media/bg.40758fb542d171eeed69.jpg",
     "index.html": "/AQI-APP/index.html",
-    "main.0d6f7d4e.css.map": "/AQI-APP/static/css/main.0d6f7d4e.css.map",
-    "main.bac69cce.js.map": "/AQI-APP/static/js/main.bac69cce.js.map"
+    "main.58e30a46.css.map": "/AQI-APP/static/css/main.58e30a46.css.map",
+    "main.0bd1d0b1.js.map": "/AQI-APP/static/js/main.0bd1d0b1.js.map"
   },
   "entrypoints": [
-    "static/css/main.0d6f7d4e.css",
-    "static/js/main.bac69cce.js"
+    "static/css/main.58e30a46.css",
+    "static/js/main.0bd1d0b1.js"
   ]
 }
