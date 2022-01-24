@@ -1,4 +1,4 @@
-const webSocket = new WebSocket('ws://city-ws.herokuapp.com');
+const webSocket = new WebSocket('wss://city-ws.herokuapp.com');
 
 
 webSocket.onopen = () => {
