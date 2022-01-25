@@ -27,7 +27,7 @@ function AqiList ({
   
   return (
     <tr key={lableAndColor.label}>
-      <td>{location}</td>
+      <td >{location}</td>
       <td>{quality.toFixed(2)}</td>
       <td
         style={{

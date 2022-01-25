@@ -3,7 +3,6 @@ import webSocket from "../../utils/index";
 import labelColor from "../../utils/lable-color";
 import AqiList from "./AqiList";
 import BarChart  from "./BarChart";
-import LineChart from "./Line";
 
 function Table() {
   const [aqiList, setAqiList] = useState([]);
@@ -67,8 +66,7 @@ function Table() {
         ))}
       </tbody>
     </table>
-    <BarChart dataList={dataList}/>
-    <LineChart/>      
+    <BarChart dataList={dataList}/>      
     </div>
   );
 }
